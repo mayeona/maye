@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "启动", // ctrl➕shift➕b 一键启动。 结束任务：ctrl+shit+a/p 输入 terminate task 终止任务，可点右边小齿轮绑定快捷键如 ctrl+alt+q
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["run", "docs:dev"],
+      "isBackground": true, // 任务后台运行(启动服务不会阻塞 vscode)
+      "problemMatcher": {
+        "pattern": {
+          "regexp": ".*",
+          "file": 1,
+          "location": 2,
+          "message": 3
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "vuepress dev docs", // 匹配“服务开始启动”的日志，即运行 pnpm run docs:dev 后控制台输出的内容
+          "endsPattern": "Local:.*http://localhost:8109/" // 匹配“启动完成”的日志
+          // 这将告诉 vscode 当看到 “vuepress dev docs” 开始打印，然后等到 Local: http://localhost:8109/ 出现，就代表任务成功，可以“后台化”它了。
+        }
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+    }
+  ]
+}

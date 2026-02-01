@@ -1,19 +1,27 @@
-# Hugo Example
+# vercel
 
-This directory is a brief example of a [Hugo](https://gohugo.io/) app that can be deployed with Vercel and zero configuration.
+The Site is generated using [vuepress](https://vuepress.vuejs.org/) and [vuepress-theme-plume](https://github.com/pengzhanbo/vuepress-theme-plume)
 
-## Deploy Your Own
+## Install
 
-Deploy your own Hugo project with Vercel.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/hugo&template=hugo)
-
-_Live Example: https://hugo.now-examples.now.sh_
-
-### How We Created This Example
-
-To get started with Hugo for deployment with Vercel, you can use the [Hugo CLI](https://gohugo.io/commands/) to initialize the project:
-
-```shell
-$ hugo new site project-name
+```sh
+pnpm i
 ```
+
+## Usage
+
+```sh
+# start dev server
+pnpm docs:dev
+# build for production
+pnpm docs:build
+# preview production build in local
+pnpm docs:preview
+# update vuepress and theme
+pnpm vp-update
+```
+
+## Documents
+
+- [vuepress](https://vuepress.vuejs.org/)
+- [vuepress-theme-plume](https://theme-plume.vuejs.press/)
